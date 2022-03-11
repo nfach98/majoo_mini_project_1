@@ -13,7 +13,41 @@ class BottomNavBar extends StatelessWidget {
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          SizedBox(
+              height: 50,
+              width: 50,
+              child: CustomPaint(
+                painter: BottomNavBarCustomPainter(),
+                willChange: true,
+                child: const Icon(
+                  Icons.home,
+                  color: Colors.blue,
+                ),
+              )),
+          SizedBox(
+              height: 50,
+              width: 50,
+              child: CustomPaint(
+                painter: BottomNavBarCustomPainter(),
+                willChange: true,
+                child: const Icon(
+                  Icons.home,
+                  color: Colors.blue,
+                ),
+              )),
+          SizedBox(
+              height: 50,
+              width: 50,
+              child: CustomPaint(
+                painter: BottomNavBarCustomPainter(),
+                willChange: true,
+                child: const Icon(
+                  Icons.home,
+                  color: Colors.blue,
+                ),
+              )),
           SizedBox(
               height: 50,
               width: 50,
