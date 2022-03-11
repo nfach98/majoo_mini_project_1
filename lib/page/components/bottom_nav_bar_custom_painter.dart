@@ -3,8 +3,13 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 
 class BottomNavBarCustomPainter extends CustomPainter {
+  final bool isPainted;
+  BottomNavBarCustomPainter({this.isPainted = false});
   @override
   void paint(Canvas canvas, Size size) {
+    if (isPainted == false) {
+      return;
+    }
     Path path_0 = Path();
     path_0.moveTo(size.width * 0.08483525, size.height * 0.1660766);
     path_0.cubicTo(size.width * 0.1032363, size.height * 0.07007227,

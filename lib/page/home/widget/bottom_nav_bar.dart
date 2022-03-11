@@ -1,65 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_1/page/components/bottom_nav_bar_custom_painter.dart';
+import 'package:mini_project_1/page/components/bottom_nav_bar_icon.dart';
 
-class BottomNavBar extends StatelessWidget {
+class BottomNavBar extends StatefulWidget {
   const BottomNavBar({Key? key}) : super(key: key);
+
+  @override
+  State<BottomNavBar> createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  int selectedIndex = 0;
+
+  bool homeButton = false;
+  bool favouriteButton = false;
+  bool creditCardButton = false;
+  bool usersButton = false;
+
+  List<String> svgAssets = [
+    'assets/svg/home.svg',
+    'assets/svg/favourite.svg',
+    'assets/svg/credit_card.svg',
+    'assets/svg/users.svg',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      height: 100,
       decoration: BoxDecoration(
         color: Colors.blueAccent.withOpacity(0.5),
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+        borderRadius: const BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          SizedBox(
-              height: 50,
-              width: 50,
-              child: CustomPaint(
-                painter: BottomNavBarCustomPainter(),
-                willChange: true,
-                child: const Icon(
-                  Icons.home,
-                  color: Colors.blue,
-                ),
-              )),
-          SizedBox(
-              height: 50,
-              width: 50,
-              child: CustomPaint(
-                painter: BottomNavBarCustomPainter(),
-                willChange: true,
-                child: const Icon(
-                  Icons.home,
-                  color: Colors.blue,
-                ),
-              )),
-          SizedBox(
-              height: 50,
-              width: 50,
-              child: CustomPaint(
-                painter: BottomNavBarCustomPainter(),
-                willChange: true,
-                child: const Icon(
-                  Icons.home,
-                  color: Colors.blue,
-                ),
-              )),
-          SizedBox(
-              height: 50,
-              width: 50,
-              child: CustomPaint(
-                painter: BottomNavBarCustomPainter(),
-                willChange: true,
-                child: const Icon(
-                  Icons.home,
-                  color: Colors.blue,
-                ),
-              )),
-        ],
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        scrollDirection: Axis.horizontal,
+        itemCount: svgAssets.length,
+        itemBuilder: (context, index) {
+          return BottomNavigationIcon(
+              isActive: index == selectedIndex ? true : false,
+              onPressed: () {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              icon: svgAssets[index]);
+        },
       ),
     );
   }
