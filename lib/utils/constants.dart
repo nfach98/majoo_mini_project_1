@@ -57,17 +57,21 @@ TextStyle textStyleHeading1Dark = TextStyle(
 );
 TextStyle textStyleHeading2 = TextStyle(
   color: colorTextHeading2,
-  fontWeight: FontWeight.bold
+  fontWeight: FontWeight.bold,
+  fontSize: 18
 );
 
 TextStyle textStyleBody1 = TextStyle(
-  color: colorTextBody1
+  color: colorTextBody1,
+  fontSize: 16
 );
 TextStyle textStyleBody2 = TextStyle(
   color: colorTextBody2
 );
 TextStyle textStyleBody3 = TextStyle(
-  color: colorTextBody3
+  color: colorTextBody3,
+  fontSize: 16,
+  fontWeight: FontWeight.bold
 );
 
 TextStyle textStyleButtonLight = TextStyle(
