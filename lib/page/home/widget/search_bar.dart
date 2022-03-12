@@ -3,15 +3,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_project_1/utils/constants.dart';
 
 class SearchBar extends StatelessWidget {
-  const SearchBar({Key? key, this.textController, this.onSuffixIconTap}) : super(key: key);
+  const SearchBar({Key? key, this.textController, this.onSuffixIconTap, this.width}) : super(key: key);
   final TextEditingController? textController;
   final VoidCallback? onSuffixIconTap;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: width >= 480 ? width * 0.7 : width,
+      width: this.width ?? (width >= 480 ? width * 0.7 : width),
       child: DecoratedBox(
         decoration: BoxDecoration(
           boxShadow: [
