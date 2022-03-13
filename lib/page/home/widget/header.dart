@@ -12,6 +12,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
+    final textScaleFactor = MediaQuery.of(context).textScaleFactor;
     return Container(
       // TODO need to change the height of the header when width >= 480
       height: width >= 480 ? 350 : 175,
@@ -47,6 +48,7 @@ class Header extends StatelessWidget {
                     style: textStyleHeading1Light.copyWith(fontSize: 24),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
+                    textScaleFactor: textScaleFactor > 1 ? 1.18 : 1,
                   ),
                   Row(
                     children: <Widget>[
