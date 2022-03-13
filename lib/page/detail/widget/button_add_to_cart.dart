@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:mini_project_1/utils/constants.dart';
 
 class ButtonAddToCart extends StatelessWidget {
-  const ButtonAddToCart({Key? key, this.price = 129, this.onPressed}) : super(key: key);
+  const ButtonAddToCart({Key? key, this.price = 129, this.onPressed, this.width}) : super(key: key);
   final int price;
   final VoidCallback? onPressed;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
     final _radius = BorderRadius.circular(16);
     return Container(
       height: 70,
-      width: 315,
+      width: width ?? 315,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [colorAccent, colorPrimary],
