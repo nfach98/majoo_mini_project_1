@@ -18,7 +18,10 @@ class _DetailAppBarState extends State<DetailAppBar> {
     primary: Colors.white.withOpacity(0.4),
     fixedSize: Size(widget.screenHeight, widget.screenHeight),
     shape: const CircleBorder(
-      side: BorderSide(color: Colors.white, width: 2),
+      side: BorderSide(
+        color: Colors.white,
+        width: 2
+      ),
     ),
   );
   

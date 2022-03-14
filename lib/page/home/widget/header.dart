@@ -22,7 +22,6 @@ class Header extends StatelessWidget {
     final width = this.width ?? context.width;
     final textScaleFactor = MediaQuery.of(context).textScaleFactor;
     return Container(
-      // TODO need to change the height of the header when width >= 480
       height: width >= 480 ? 350 : 175,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -45,7 +44,6 @@ class Header extends StatelessWidget {
             ),
           ),
           SizedBox(
-            // TODO need padding default, dummy 32
             width: (width - 32) / 2,
             child: Padding(
               padding: const EdgeInsets.all(20.0),

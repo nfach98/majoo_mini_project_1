@@ -9,6 +9,7 @@ class ButtonAddToCart extends StatelessWidget {
     this.width = 315,
     this.height = 70,
   }) : super(key: key);
+
   final int price;
   final VoidCallback? onPressed;
   final double width;
