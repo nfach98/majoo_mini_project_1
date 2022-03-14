@@ -3,7 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_project_1/utils/constants.dart';
 
 class SearchBar extends StatelessWidget {
-  const SearchBar({Key? key, this.textController, this.onSuffixIconTap, this.width}) : super(key: key);
+  const SearchBar({
+    Key? key,
+    this.textController,
+    this.onSuffixIconTap,
+    this.width,
+  }) : super(key: key);
   final TextEditingController? textController;
   final VoidCallback? onSuffixIconTap;
   final double? width;
