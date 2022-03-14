@@ -50,7 +50,7 @@ TextStyle textStyleHeading1Dark =
     TextStyle(color: colorTextHeading1Dark, fontWeight: FontWeight.bold);
 TextStyle textStyleHeading2 = TextStyle(
   color: colorTextHeading2,
-  fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w600,
   fontSize: 30,
 );
 
@@ -58,6 +58,23 @@ TextStyle textStyleBody1 =
     TextStyle(color: colorTextBody1, fontSize: 18, fontWeight: FontWeight.w400);
 TextStyle textStyleBody2 = TextStyle(color: colorTextBody2);
 TextStyle textStyleBody3 = TextStyle(color: colorTextBody3);
+=======
+  fontWeight: FontWeight.bold,
+  fontSize: 18
+);
+
+TextStyle textStyleBody1 = TextStyle(
+  color: colorTextBody1,
+  fontSize: 16
+);
+TextStyle textStyleBody2 = TextStyle(
+  color: colorTextBody2
+);
+TextStyle textStyleBody3 = TextStyle(
+  color: colorTextBody3,
+  fontSize: 16,
+  fontWeight: FontWeight.bold
+);
 
 TextStyle textStyleButtonLight = TextStyle(color: colorTextButtonLight);
 TextStyle textStyleButtonDark = TextStyle(color: colorTextButtonDark);
