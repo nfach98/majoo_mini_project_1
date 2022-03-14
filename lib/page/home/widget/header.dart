@@ -52,7 +52,7 @@ class Header extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
+                children: [
                   Text(
                     'Dji Phantom Drone',
                     style: textStyleHeading1Light.copyWith(fontSize: 24),
@@ -61,7 +61,7 @@ class Header extends StatelessWidget {
                     textScaleFactor: textScaleFactor > 1 ? 1.18 : 1,
                   ),
                   Row(
-                    children: <Widget>[
+                    children: [
                       Icon(Icons.star_rounded, color: colorIconStar, size: 20),
                       Flexible(
                         child: Text(
