@@ -48,19 +48,10 @@ class _DetailCounterState extends State<DetailCounter> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        InkWell(
-          onTap: decrease,
-          child: Container(
-            decoration: BoxDecoration(
-                gradient: linearGradient,
-                borderRadius: BorderRadius.circular(10)),
-            height: widget.screenHeight * 0.040,
-            width: widget.screenHeight * 0.040,
-            child: const Icon(
-              Icons.remove,
-              color: Colors.white,
-            ),
-          ),
+        ButtonCounter(
+          size: widget.screenHeight * 0.040,
+          icon: Icons.remove,
+          function: decrease,
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: widget.screenWidth * 0.085),
@@ -94,22 +85,42 @@ class _DetailCounterState extends State<DetailCounter> {
             ),
           ),
         ),
-        InkWell(
-          onTap: increase,
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: linearGradient,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            height: widget.screenHeight * 0.040,
-            width: widget.screenHeight * 0.040,
-            child: const Icon(
-              Icons.add,
-              color: Colors.white,
-            ),
-          ),
-        ),
+        ButtonCounter(
+          size: widget.screenHeight * 0.040,
+          icon: Icons.add,
+          function: increase,
+        )
       ],
+    );
+  }
+}
+
+class ButtonCounter extends StatelessWidget {
+  final VoidCallback? function;
+  final double size;
+  final IconData icon;
+
+  const ButtonCounter({
+    Key? key,
+    this.function,
+    required this.size,
+    required this.icon,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: function,
+      child: Container(
+        decoration: BoxDecoration(
+            gradient: linearGradient, borderRadius: BorderRadius.circular(10)),
+        height: size,
+        width: size,
+        child: Icon(
+          icon,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
