@@ -21,7 +21,7 @@ class _DetailAppBarState extends State<DetailAppBar> {
       side: BorderSide(color: Colors.white, width: 2),
     ),
   );
-
+  
   void favouriteClicked() {
     isFavourite = !isFavourite;
   }
