@@ -11,11 +11,6 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int selectedIndex = 0;
 
-  bool homeButton = false;
-  bool favouriteButton = false;
-  bool creditCardButton = false;
-  bool usersButton = false;
-
   List<String> svgAssets = [
     'assets/svg/home.svg',
     'assets/svg/favourite.svg',
@@ -41,7 +36,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         itemCount: svgAssets.length,
         itemBuilder: (context, index) {
           return BottomNavigationIcon(
-              isActive: index == selectedIndex ? true : false,
+              isActive: index == selectedIndex,
               onPressed: () {
                 setState(() {
                   selectedIndex = index;
