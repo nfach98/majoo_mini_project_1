@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_1/utils/constants.dart';
+import 'package:mini_project_1/utils/extensions.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -18,7 +19,7 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = this.width ?? MediaQuery.of(context).size.width;
+    final width = this.width ?? context.width;
     final textScaleFactor = MediaQuery.of(context).textScaleFactor;
     return Container(
       // TODO need to change the height of the header when width >= 480
