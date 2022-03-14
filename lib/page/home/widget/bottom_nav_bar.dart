@@ -36,13 +36,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
         itemCount: svgAssets.length,
         itemBuilder: (context, index) {
           return BottomNavigationIcon(
-              isActive: index == selectedIndex,
-              onPressed: () {
-                setState(() {
-                  selectedIndex = index;
-                });
-              },
-              icon: svgAssets[index]);
+            isActive: index == selectedIndex,
+            onPressed: () {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+            icon: svgAssets[index],
+          );
         },
       ),
     );
