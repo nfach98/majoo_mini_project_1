@@ -64,8 +64,7 @@ class Header extends StatelessWidget {
                       Flexible(
                         child: Text(
                           '$rating ($sales)',
-                          style:
-                              textStyleBody1.copyWith(color: colorBackground),
+                          style: textStyleBody1.copyWith(color: colorBackground),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
