@@ -23,14 +23,10 @@ class DetailContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Padding(
-          padding: EdgeInsets.only(
-              top: screenHeight * 0.05,
-              bottom: screenHeight * 0.025,
-              left: screenWidth * 0.1,
-              right: screenWidth * 0.1,
-          ),
+          padding: const EdgeInsets.only(top: 40, bottom: 20),
           child: Text(
             title,
             textScaleFactor: mediaQuery.textScaleFactor.clamp(1, 1.5),
@@ -47,9 +43,9 @@ class DetailContent extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: [
               Padding(
-                padding: EdgeInsets.only(
-                  left: screenWidth * 0.1,
-                  right: screenWidth * 0.1,
+                padding: const EdgeInsets.only(
+                  left: 24,
+                  right: 24,
                 ),
                 child: Text(
                   description,

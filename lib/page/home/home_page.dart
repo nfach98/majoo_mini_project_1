@@ -50,7 +50,10 @@ class HomePage extends StatelessWidget {
               products: products,
             );
           } else {
-            return PortraitHomeView();
+            //   return PortraitHomeView();
+            return DetailPage(
+              title: 'DJI ',
+            );
           }
         },
       ),

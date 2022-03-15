@@ -34,16 +34,12 @@ LinearGradient linearGradient = LinearGradient(
   end: Alignment.centerRight,
   colors: [colorAccent, colorPrimary],
 );
-
-RadialGradient radialGradient = RadialGradient(
-  colors: [colorAccent, colorPrimary],
-);
-
 LinearGradient backgroundGradient = LinearGradient(
   begin: Alignment.bottomLeft,
   end: Alignment.topRight,
   colors: [colorBackground2, colorBackground],
 );
+
 RadialGradient radialGradient(double width) {
   return RadialGradient(colors: [colorAccent, colorPrimary], radius: 1);
 }
