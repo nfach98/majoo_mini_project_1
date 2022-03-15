@@ -51,7 +51,8 @@ class _DetailSliderState extends State<DetailSlider> {
         height: widget.screenHeight * 0.0250,
         width: widget.screenHeight * 0.0250,
         child: CircleAvatar(
-          backgroundColor: Colors.white.withOpacity(_current == entryKey ? 1 : 0.7),
+          backgroundColor:
+              Colors.white.withOpacity(_current == entryKey ? 1 : 0.7),
         ),
       ),
     );
@@ -81,34 +82,33 @@ class _DetailSliderState extends State<DetailSlider> {
       height: widget.screenHeight,
       width: widget.screenWidth,
       decoration: BoxDecoration(
-        gradient: radialGradient,
+        gradient: radialGradient(widget.screenWidth),
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(50)),
       ),
       child: Column(
         children: [
           Padding(
             padding: EdgeInsets.only(
-              top: widget.screenHeight * 0.30,
-              bottom: widget.screenHeight * 0.02
-            ),
+                top: widget.screenHeight * 0.30,
+                bottom: widget.screenHeight * 0.02),
             child: CarouselSlider(
               items: imageSliders,
               carouselController: _controller,
               options: CarouselOptions(
-                height: widget.screenHeight * 0.50,
-                autoPlay: true,
-                enlargeCenterPage: true,
-                aspectRatio: 2.0,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    _current = index;
-                  });
-                }
-              ),
+                  height: widget.screenHeight * 0.50,
+                  autoPlay: true,
+                  enlargeCenterPage: true,
+                  aspectRatio: 2.0,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      _current = index;
+                    });
+                  }),
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: widget.screenHeight * 0.050),
+            padding:
+                EdgeInsets.symmetric(vertical: widget.screenHeight * 0.050),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: imgList.asMap().entries.map(
