@@ -25,11 +25,11 @@ class DetailContent extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(
-            top: 40,
-            bottom: 20,
-            left: 53,
-            right: 70,
+          padding: EdgeInsets.only(
+              top: screenHeight * 0.05,
+              bottom: screenHeight * 0.025,
+              left: screenWidth * 0.1,
+              right: screenWidth * 0.1,
           ),
           child: Text(
             title,
@@ -47,9 +47,9 @@ class DetailContent extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: [
               Padding(
-                padding: const EdgeInsets.only(
-                  left: 24,
-                  right: 24,
+                padding: EdgeInsets.only(
+                  left: screenWidth * 0.1,
+                  right: screenWidth * 0.1,
                 ),
                 child: Text(
                   description,

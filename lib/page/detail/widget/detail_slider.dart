@@ -28,8 +28,8 @@ class _DetailSliderState extends State<DetailSlider> {
   Widget indicatorSlider(int entryKey) {
     return _current == entryKey
         ? Container(
-            width: 22,
-            height: 22,
+            width: widget.screenHeight * 0.050,
+            height: widget.screenHeight * 0.050,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.white.withOpacity(0.4),
@@ -48,11 +48,10 @@ class _DetailSliderState extends State<DetailSlider> {
   Widget indicatorWidget(int entryKey) {
     return Center(
       child: SizedBox(
-        height: 8,
-        width: 8,
+        height: widget.screenHeight * 0.0250,
+        width: widget.screenHeight * 0.0250,
         child: CircleAvatar(
-          backgroundColor:
-              Colors.white.withOpacity(_current == entryKey ? 1 : 0.7),
+          backgroundColor: Colors.white.withOpacity(_current == entryKey ? 1 : 0.7),
         ),
       ),
     );
@@ -88,29 +87,28 @@ class _DetailSliderState extends State<DetailSlider> {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(
-              top: 114,
+            padding: EdgeInsets.only(
+              top: widget.screenHeight * 0.30,
+              bottom: widget.screenHeight * 0.02
             ),
             child: CarouselSlider(
               items: imageSliders,
               carouselController: _controller,
               options: CarouselOptions(
-                  height: widget.screenHeight * 0.50,
-                  autoPlay: true,
-                  enlargeCenterPage: true,
-                  aspectRatio: 2.0,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      _current = index;
-                    });
-                  }),
+                height: widget.screenHeight * 0.50,
+                autoPlay: true,
+                enlargeCenterPage: true,
+                aspectRatio: 2.0,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _current = index;
+                  });
+                }
+              ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              top: 36,
-              bottom: 26,
-            ),
+            padding: EdgeInsets.symmetric(vertical: widget.screenHeight * 0.050),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: imgList.asMap().entries.map(
