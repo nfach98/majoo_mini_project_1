@@ -56,7 +56,7 @@ class _DetailSliderState extends State<DetailSlider> {
       ),
     );
   }
-  
+
   @override
   void initState() {
     imgList.add(widget.image);
@@ -108,8 +108,7 @@ class _DetailSliderState extends State<DetailSlider> {
             ),
           ),
           Padding(
-            padding:
-                EdgeInsets.symmetric(vertical: widget.screenHeight * 0.050),
+            padding: EdgeInsets.symmetric(vertical: widget.screenHeight * 0.050),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: imgList.asMap().entries.map(

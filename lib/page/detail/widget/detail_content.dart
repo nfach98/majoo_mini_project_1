@@ -29,7 +29,8 @@ class DetailContent extends StatelessWidget {
               top: screenHeight * 0.05,
               bottom: screenHeight * 0.025,
               left: screenWidth * 0.1,
-              right: screenWidth * 0.1),
+              right: screenWidth * 0.1,
+          ),
           child: Text(
             title,
             textScaleFactor: mediaQuery.textScaleFactor.clamp(1, 1.5),

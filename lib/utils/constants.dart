@@ -34,6 +34,13 @@ LinearGradient linearGradient = LinearGradient(
     end: Alignment.centerRight,
     colors: [colorAccent, colorPrimary]
 );
+RadialGradient radialGradient =RadialGradient(colors: [colorAccent, colorPrimary]);
+
+LinearGradient backgroundGradient = LinearGradient(
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+    colors: [colorBackground2, colorBackground],
+);
 RadialGradient radialGradient = RadialGradient(colors: [colorAccent, colorPrimary]);
 
 LinearGradient backgroundGradient = LinearGradient(
@@ -61,16 +68,16 @@ TextStyle textStyleHeading2 = TextStyle(
 );
 
 TextStyle textStyleBody1 = TextStyle(
-    color: colorTextBody1,
-    fontSize: 16
+  color: colorTextBody1,
+  fontSize: 16
 );
 TextStyle textStyleBody2 = TextStyle(
-    color: colorTextBody2
+  color: colorTextBody2
 );
 TextStyle textStyleBody3 = TextStyle(
-    color: colorTextBody3,
-    fontSize: 16,
-    fontWeight: FontWeight.bold
+  color: colorTextBody3,
+  fontSize: 16,
+  fontWeight: FontWeight.bold
 );
 
 TextStyle textStyleButtonLight = TextStyle(
