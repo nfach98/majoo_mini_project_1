@@ -47,12 +47,12 @@ LinearGradient backgroundGradient = LinearGradient(
 TextStyle textStyleSearchBar = TextStyle(color: colorTextSearchBar);
 
 TextStyle textStyleHeading1Light = TextStyle(
-  color: colorTextHeading1Light,
-  fontWeight: FontWeight.bold
+    color: colorTextHeading1Light,
+    fontWeight: FontWeight.bold
 );
 TextStyle textStyleHeading1Dark = TextStyle(
-  color: colorTextHeading1Dark,
-  fontWeight: FontWeight.bold
+    color: colorTextHeading1Dark,
+    fontWeight: FontWeight.bold
 );
 TextStyle textStyleHeading2 = TextStyle(
   color: colorTextHeading2,
@@ -61,16 +61,16 @@ TextStyle textStyleHeading2 = TextStyle(
 );
 
 TextStyle textStyleBody1 = TextStyle(
-  color: colorTextBody1,
-  fontSize: 16
+    color: colorTextBody1,
+    fontSize: 16
 );
 TextStyle textStyleBody2 = TextStyle(
-  color: colorTextBody2
+    color: colorTextBody2
 );
 TextStyle textStyleBody3 = TextStyle(
-  color: colorTextBody3,
-  fontSize: 16,
-  fontWeight: FontWeight.bold
+    color: colorTextBody3,
+    fontSize: 16,
+    fontWeight: FontWeight.bold
 );
 
 TextStyle textStyleButtonLight = TextStyle(
