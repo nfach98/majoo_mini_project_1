@@ -35,8 +35,9 @@ LinearGradient linearGradient = LinearGradient(
   colors: [colorAccent, colorPrimary],
 );
 
-RadialGradient radialGradient =
-    RadialGradient(colors: [colorAccent, colorPrimary]);
+RadialGradient radialGradient = RadialGradient(
+  colors: [colorAccent, colorPrimary],
+);
 
 LinearGradient backgroundGradient = LinearGradient(
   begin: Alignment.bottomLeft,
@@ -51,7 +52,10 @@ TextStyle textStyleHeading1Light =
     TextStyle(color: colorTextHeading1Light, fontWeight: FontWeight.bold);
 
 TextStyle textStyleHeading1Dark = TextStyle(
-    color: colorTextHeading1Dark, fontWeight: FontWeight.bold, fontSize: 24);
+  color: colorTextHeading1Dark,
+  fontWeight: FontWeight.bold,
+  fontSize: 24,
+);
 
 TextStyle textStyleHeading2 = TextStyle(
   color: colorTextHeading2,
