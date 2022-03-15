@@ -71,15 +71,15 @@ class _DetailCounterState extends State<DetailCounter> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         buttonCounter(
-          size: widget.screenHeight * 0.040,
+          size: 30,
           icon: Icons.remove,
           function: decrease,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: widget.screenWidth * 0.085),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: SizedBox(
-            height: widget.screenHeight * 0.040,
-            width: widget.screenHeight * 0.040,
+            height: 30,
+            width: 30,
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(width: 1, color: colorTextFieldButton),
@@ -100,7 +100,7 @@ class _DetailCounterState extends State<DetailCounter> {
           ),
         ),
         buttonCounter(
-          size: widget.screenHeight * 0.040,
+          size: 30,
           icon: Icons.add,
           function: increase,
         )

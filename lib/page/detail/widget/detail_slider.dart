@@ -28,8 +28,8 @@ class _DetailSliderState extends State<DetailSlider> {
   Widget indicatorSlider(int entryKey) {
     return _current == entryKey
         ? Container(
-            width: widget.screenHeight * 0.050,
-            height: widget.screenHeight * 0.050,
+            width: 22,
+            height: 22,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.white.withOpacity(0.4),
@@ -48,8 +48,8 @@ class _DetailSliderState extends State<DetailSlider> {
   Widget indicatorWidget(int entryKey) {
     return Center(
       child: SizedBox(
-        height: widget.screenHeight * 0.0250,
-        width: widget.screenHeight * 0.0250,
+        height: 8,
+        width: 8,
         child: CircleAvatar(
           backgroundColor:
               Colors.white.withOpacity(_current == entryKey ? 1 : 0.7),
@@ -88,9 +88,9 @@ class _DetailSliderState extends State<DetailSlider> {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(
-                top: widget.screenHeight * 0.30,
-                bottom: widget.screenHeight * 0.02),
+            padding: const EdgeInsets.only(
+              top: 114,
+            ),
             child: CarouselSlider(
               items: imageSliders,
               carouselController: _controller,
@@ -107,8 +107,10 @@ class _DetailSliderState extends State<DetailSlider> {
             ),
           ),
           Padding(
-            padding:
-                EdgeInsets.symmetric(vertical: widget.screenHeight * 0.050),
+            padding: const EdgeInsets.only(
+              top: 36,
+              bottom: 26,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: imgList.asMap().entries.map(
