@@ -6,13 +6,16 @@ class ListMostPopular extends StatelessWidget {
   final List<Product> products;
   final Widget Function(BuildContext, int) itemBuilder;
 
-  const ListMostPopular({Key? key, required this.itemBuilder, required this.products}) : super(key: key);
+  const ListMostPopular(
+      {Key? key, required this.itemBuilder, required this.products})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      shrinkWrap: true,
       itemCount: products.length,
-      itemBuilder: itemBuilder
+      itemBuilder: itemBuilder,
     );
   }
 }
