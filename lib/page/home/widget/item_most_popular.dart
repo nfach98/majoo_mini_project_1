@@ -53,12 +53,16 @@ class ItemMostPopular extends StatelessWidget {
                 children: [
                   Text(
                     textTitle,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: textStyleHeading2,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 4.0),
                     child: Text(
                       textSubtitle,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: textStyleBody1,
                     ),
                   ),
@@ -79,6 +83,7 @@ class ItemMostPopular extends StatelessWidget {
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: Text(
                                   textRating,
+                                  maxLines: 1,
                                   style: textStyleBody1,
                                 ),
                               ),
@@ -87,15 +92,16 @@ class ItemMostPopular extends StatelessWidget {
                         ),
                         Text(
                           textPrice,
+                          maxLines: 1,
                           style: textStyleBody3,
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
