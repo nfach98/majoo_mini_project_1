@@ -13,7 +13,18 @@ class DetailAppBar extends StatefulWidget {
 
 class _DetailAppBarState extends State<DetailAppBar> {
   bool isFavourite = false;
-
+  
+  late ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+    primary: Colors.white.withOpacity(0.4),
+    fixedSize: Size(widget.screenHeight, widget.screenHeight),
+    shape: const CircleBorder(
+      side: BorderSide(
+        color: Colors.white,
+        width: 2
+      ),
+    ),
+  );
+  
   void favouriteClicked() {
     isFavourite = !isFavourite;
   }
@@ -24,26 +35,14 @@ class _DetailAppBarState extends State<DetailAppBar> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.white.withOpacity(0.4),
-            fixedSize: Size(widget.screenHeight, widget.screenHeight),
-            shape: const CircleBorder(
-              side: BorderSide(color: Colors.white, width: 2),
-            ),
-          ),
+          style: buttonStyle,
           child: const Icon(Icons.arrow_back_ios_new),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
         ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.white.withOpacity(0.4),
-            fixedSize: Size(widget.screenHeight, widget.screenHeight),
-            shape: const CircleBorder(
-              side: BorderSide(color: Colors.white, width: 2),
-            ),
-          ),
+          style: buttonStyle,
           child: isFavourite
               ? const Icon(Icons.favorite)
               : const Icon(Icons.favorite_border),
