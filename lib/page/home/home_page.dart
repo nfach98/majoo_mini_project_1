@@ -5,14 +5,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (_, constraint) {
-        if (constraint.maxWidth >= 480) {
-          return LandscapeHomeView();
-        } else {
-          return PortraitHomeView();
-        }
-      },
+    return Scaffold(
+      body: LayoutBuilder(
+        builder: (_, constraint) {
+          if (constraint.maxWidth >= 480) {
+            return LandscapeHomeView();
+          } else {
+            return PortraitHomeView();
+          }
+        },
+      ),
     );
   }
 }
