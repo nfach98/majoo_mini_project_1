@@ -25,6 +25,39 @@ class _DetailSliderState extends State<DetailSlider> {
   List<String> imgList = [];
   List<Widget> imageSliders = [];
 
+  Widget indicatorSlider(int entryKey) {
+    return _current == entryKey
+        ? Container(
+            width: widget.screenHeight * 0.050,
+            height: widget.screenHeight * 0.050,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white.withOpacity(0.4),
+              border: Border.all(color: Colors.white, width: 1),
+            ),
+            child: indicatorWidget(entryKey),
+          )
+        : Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
+            ),
+            child: indicatorWidget(entryKey),
+          );
+  }
+
+  Widget indicatorWidget(int entryKey) {
+    return Center(
+      child: SizedBox(
+        height: widget.screenHeight * 0.0250,
+        width: widget.screenHeight * 0.0250,
+        child: CircleAvatar(
+          backgroundColor:
+              Colors.white.withOpacity(_current == entryKey ? 1 : 0.7),
+        ),
+      ),
+    );
+  }
+
   @override
   void initState() {
     imgList.add(widget.image);
@@ -82,41 +115,7 @@ class _DetailSliderState extends State<DetailSlider> {
                 (entry) {
                   return GestureDetector(
                     onTap: () => _controller.animateToPage(entry.key),
-                    child: _current == entry.key
-                        ? Container(
-                            width: widget.screenHeight * 0.050,
-                            height: widget.screenHeight * 0.050,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white.withOpacity(0.4),
-                              border: Border.all(color: Colors.white, width: 1),
-                            ),
-                            child: Center(
-                              child: SizedBox(
-                                height: widget.screenHeight * 0.0250,
-                                width: widget.screenHeight * 0.0250,
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.white.withOpacity(
-                                      _current == entry.key ? 1 : 0.7),
-                                ),
-                              ),
-                            ),
-                          )
-                        : Center(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 10,
-                              ),
-                              child: SizedBox(
-                                height: widget.screenHeight * 0.0250,
-                                width: widget.screenHeight * 0.0250,
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.white.withOpacity(
-                                      _current == entry.key ? 1 : 0.7),
-                                ),
-                              ),
-                            ),
-                          ),
+                    child: indicatorSlider(entry.key),
                   );
                 },
               ).toList(),
