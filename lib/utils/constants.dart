@@ -32,53 +32,40 @@ Color colorTextFieldButton = const Color(0xFF7996E2);
 LinearGradient linearGradient = LinearGradient(
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
-    colors: [colorAccent, colorPrimary]
-);
-RadialGradient radialGradient =RadialGradient(colors: [colorAccent, colorPrimary]);
-
-LinearGradient backgroundGradient = LinearGradient(
-    begin: Alignment.bottomLeft,
-    end: Alignment.topRight,
-    colors: [colorBackground2, colorBackground],
-);
-RadialGradient radialGradient = RadialGradient(colors: [colorAccent, colorPrimary]);
+    colors: [colorAccent, colorPrimary]);
+RadialGradient radialGradient =
+    RadialGradient(colors: [colorAccent, colorPrimary]);
 
 LinearGradient backgroundGradient = LinearGradient(
   begin: Alignment.bottomLeft,
   end: Alignment.topRight,
   colors: [colorBackground2, colorBackground],
 );
+// RadialGradient radialGradient = RadialGradient(colors: [colorAccent, colorPrimary]);
+
+// LinearGradient backgroundGradient = LinearGradient(
+//   begin: Alignment.bottomLeft,
+//   end: Alignment.topRight,
+//   colors: [colorBackground2, colorBackground],
+// );
 
 // Text styles
 TextStyle textStyleSearchBar = TextStyle(color: colorTextSearchBar);
 
-TextStyle textStyleHeading1Light = TextStyle(
-    color: colorTextHeading1Light,
-    fontWeight: FontWeight.bold
-);
+TextStyle textStyleHeading1Light =
+    TextStyle(color: colorTextHeading1Light, fontWeight: FontWeight.bold);
 TextStyle textStyleHeading1Dark = TextStyle(
-  color: colorTextHeading1Dark,
-  fontWeight: FontWeight.bold,
-  fontSize: 24
-);
+    color: colorTextHeading1Dark, fontWeight: FontWeight.bold, fontSize: 24);
 TextStyle textStyleHeading2 = TextStyle(
   color: colorTextHeading2,
   fontWeight: FontWeight.w600,
   fontSize: 30,
 );
 
-TextStyle textStyleBody1 = TextStyle(
-  color: colorTextBody1,
-  fontSize: 16
-);
-TextStyle textStyleBody2 = TextStyle(
-  color: colorTextBody2
-);
-TextStyle textStyleBody3 = TextStyle(
-  color: colorTextBody3,
-  fontSize: 16,
-  fontWeight: FontWeight.bold
-);
+TextStyle textStyleBody1 = TextStyle(color: colorTextBody1, fontSize: 16);
+TextStyle textStyleBody2 = TextStyle(color: colorTextBody2);
+TextStyle textStyleBody3 =
+    TextStyle(color: colorTextBody3, fontSize: 16, fontWeight: FontWeight.bold);
 
 TextStyle textStyleButtonLight = TextStyle(
   color: colorTextButtonLight,

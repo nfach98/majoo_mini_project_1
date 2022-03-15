@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_project_1/page/detail/detail_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,7 +12,10 @@ class HomePage extends StatelessWidget {
           if (constraint.maxWidth >= 480) {
             return LandscapeHomeView();
           } else {
-            return PortraitHomeView();
+            //   return PortraitHomeView();
+            return DetailPage(
+              title: 'DJI ',
+            );
           }
         },
       ),
@@ -36,4 +40,3 @@ class PortraitHomeView extends StatelessWidget {
     return Container();
   }
 }
-
