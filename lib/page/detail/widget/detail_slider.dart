@@ -25,41 +25,34 @@ class _DetailSliderState extends State<DetailSlider> {
   List<String> imgList = [];
   List<Widget> imageSliders = [];
 
-  Widget selectedSlider(int entryKey) {
-    return Container(
-      width: widget.screenHeight * 0.050,
-      height: widget.screenHeight * 0.050,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.white.withOpacity(0.4),
-        border: Border.all(color: Colors.white, width: 1),
-      ),
-      child: Center(
-        child: SizedBox(
-          height: widget.screenHeight * 0.0250,
-          width: widget.screenHeight * 0.0250,
-          child: CircleAvatar(
-            backgroundColor:
-                Colors.white.withOpacity(_current == entryKey ? 1 : 0.7),
-          ),
-        ),
-      ),
-    );
+  Widget indicatorSlider(int entryKey) {
+    return _current == entryKey
+        ? Container(
+            width: widget.screenHeight * 0.050,
+            height: widget.screenHeight * 0.050,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white.withOpacity(0.4),
+              border: Border.all(color: Colors.white, width: 1),
+            ),
+            child: indicatorWidget(entryKey),
+          )
+        : Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
+            ),
+            child: indicatorWidget(entryKey),
+          );
   }
 
-  Widget unselectedSlider(int entryKey) {
+  Widget indicatorWidget(int entryKey) {
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-        ),
-        child: SizedBox(
-          height: widget.screenHeight * 0.0250,
-          width: widget.screenHeight * 0.0250,
-          child: CircleAvatar(
-            backgroundColor:
-                Colors.white.withOpacity(_current == entryKey ? 1 : 0.7),
-          ),
+      child: SizedBox(
+        height: widget.screenHeight * 0.0250,
+        width: widget.screenHeight * 0.0250,
+        child: CircleAvatar(
+          backgroundColor:
+              Colors.white.withOpacity(_current == entryKey ? 1 : 0.7),
         ),
       ),
     );
@@ -121,10 +114,9 @@ class _DetailSliderState extends State<DetailSlider> {
               children: imgList.asMap().entries.map(
                 (entry) {
                   return GestureDetector(
-                      onTap: () => _controller.animateToPage(entry.key),
-                      child: _current == entry.key
-                          ? selectedSlider(entry.key)
-                          : unselectedSlider(entry.key));
+                    onTap: () => _controller.animateToPage(entry.key),
+                    child: indicatorSlider(entry.key),
+                  );
                 },
               ).toList(),
             ),
