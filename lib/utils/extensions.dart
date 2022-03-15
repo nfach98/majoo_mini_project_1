@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 extension Media on BuildContext {
   MediaQueryData get media => MediaQuery.of(this);
-  double get width => MediaQuery.of(this).size.width;
-  double get height => MediaQuery.of(this).size.height;
-  double get statusBarHeight => MediaQuery.of(this).padding.top;
-  double get bottomBarHeight => MediaQuery.of(this).padding.bottom;
+  double get width => media.size.width;
+  double get height => media.size.height;
+  double get statusBarHeight => media.padding.top;
+  double get bottomBarHeight => media.padding.bottom;
   double get safeAreaHeight => height - statusBarHeight - bottomBarHeight;
   double get safeAreaWidth => width;
 
