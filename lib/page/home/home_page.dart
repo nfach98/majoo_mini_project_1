@@ -73,11 +73,11 @@ class PortraitHomeView extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: RadialGradient(
             colors: [
-              colorBackground2,
-              colorBackground.withOpacity(0.1),
+              colorBackground2.withOpacity(0),
+              colorBackground,
             ],
             center: Alignment.bottomCenter,
-            radius: 1.9,
+            radius: 1.1,
           ),
         ),
         child: Column(
