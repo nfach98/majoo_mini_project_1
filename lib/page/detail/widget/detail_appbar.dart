@@ -13,7 +13,7 @@ class DetailAppBar extends StatefulWidget {
 
 class _DetailAppBarState extends State<DetailAppBar> {
   bool isFavourite = false;
-
+  
   late ButtonStyle buttonStyle = ElevatedButton.styleFrom(
     primary: Colors.white.withOpacity(0.4),
     fixedSize: Size(widget.screenHeight, widget.screenHeight),

@@ -30,11 +30,10 @@ Color colorTextFieldButton = const Color(0xFF7996E2);
 
 // Gradient
 LinearGradient linearGradient = LinearGradient(
-  begin: Alignment.centerLeft,
-  end: Alignment.centerRight,
-  colors: [colorAccent, colorPrimary],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+    colors: [colorAccent, colorPrimary]
 );
-
 RadialGradient radialGradient = RadialGradient(colors: [colorAccent, colorPrimary]);
 
 LinearGradient backgroundGradient = LinearGradient(
