@@ -45,15 +45,14 @@ class HomePage extends StatelessWidget {
       backgroundColor: colorBackground,
       body: LayoutBuilder(
         builder: (_, constraint) {
-          if (constraint.maxWidth >= 480) {
+          if (context.width >= 480) {
             return LandscapeHomeView(
               products: products,
             );
           } else {
-            //   return PortraitHomeView();
-            return DetailPage(
-              title: 'DJI ',
-            );
+              return PortraitHomeView(
+                products: products,
+              );
           }
         },
       ),
@@ -135,6 +134,14 @@ class LandscapeHomeView extends StatelessWidget {
                                 textRating: products[index].textRating,
                                 textPrice: products[index].textPrice,
                                 image: products[index].image,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (_) => const DetailPage(
+                                      title: 'DJI ',
+                                    ))
+                                  );
+                                },
                               );
                             },
                           ),
@@ -153,34 +160,12 @@ class LandscapeHomeView extends StatelessWidget {
 }
 
 class PortraitHomeView extends StatelessWidget {
-  const PortraitHomeView({Key? key}) : super(key: key);
+  final List<Product> products;
+
+  const PortraitHomeView({Key? key, required this.products}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<Product> productItems = [
-      Product(
-          image: 'assets/images/drone_2.png',
-          backgroundImage: const Color(0xFFE7EBFA),
-          textTitle: 'Standard Drone Camera',
-          textSubtitle: 'Package Weight: 235g',
-          textRating: '4.9 (542)',
-          textPrice: '86'),
-      Product(
-          image: 'assets/images/drone_3.png',
-          backgroundImage: const Color(0xFFFFECE3),
-          textTitle: '3D flip Drone Camera',
-          textSubtitle: 'Product weight: 70g',
-          textRating: '4.8 (497)',
-          textPrice: '78'),
-      Product(
-          image: 'assets/images/drone_4.png',
-          backgroundImage: const Color(0xFFB8EBFF),
-          textTitle: 'Remote Control Drone',
-          textSubtitle: 'Wrist Remote Control',
-          textRating: '4.8 (396)',
-          textPrice: '99'),
-    ];
-
     return Scaffold(
       extendBody: true,
       // backgroundColor: colorBackground,
@@ -230,7 +215,7 @@ class PortraitHomeView extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: ListMostPopular(
                   itemBuilder: (context, index) {
-                    final productData = productItems[index];
+                    final productData = products[index];
                     return ItemMostPopular(
                       width: context.width,
                       backgroundImage: productData.backgroundImage,
@@ -243,20 +228,21 @@ class PortraitHomeView extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const DetailPage(),
+                            builder: (_) => const DetailPage(
+                              title: 'DJI ',
+                            ),
                           ),
                         );
                       },
                     );
                   },
-                  products: productItems,
+                  products: products,
                 ),
               ),
             )
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }
