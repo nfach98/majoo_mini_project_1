@@ -19,12 +19,9 @@ class DetailPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: RadialGradient(
-            colors: [
-              colorBackground2,
-              colorBackground.withOpacity(0.1),
-            ],
-            center: Alignment.bottomLeft,
-            radius: 1,
+            colors: [colorPrimary.withOpacity(0), colorBackground],
+            center: const Alignment(-2.5, 1.5),
+            radius: 1.6,
           ),
         ),
         child: Column(
