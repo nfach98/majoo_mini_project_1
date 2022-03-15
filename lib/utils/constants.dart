@@ -51,8 +51,9 @@ TextStyle textStyleHeading1Light = TextStyle(
     fontWeight: FontWeight.bold
 );
 TextStyle textStyleHeading1Dark = TextStyle(
-    color: colorTextHeading1Dark,
-    fontWeight: FontWeight.bold
+  color: colorTextHeading1Dark,
+  fontWeight: FontWeight.bold,
+  fontSize: 24
 );
 TextStyle textStyleHeading2 = TextStyle(
   color: colorTextHeading2,
